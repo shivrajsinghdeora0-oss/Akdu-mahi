@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akdu Mahii 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff5f5, #ffe6f7);
+      color: #333;
+      text-align: center;
+      overflow: hidden;
+    }
+    h1 {
+      margin-top: 20%;
+      font-size: 2rem;
+      color: #ff5c8a;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+    p {
+      font-size: 1.2rem;
+      margin: 20px;
+      opacity: 0;
+      animation: fadeIn 3s forwards 2s;
+    }
+    button {
+      background-color: #ffb3c6;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeIn 3s forwards 3s;
+    }
+    #final {
+      display: none;
+      animation: fadeIn 2s forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    .hearts {
+      position: fixed;
+      bottom: -10px;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      background: pink;
+      opacity: 0.7;
+      transform: rotate(45deg);
+      animation: floatUp 6s linear infinite;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(45deg); opacity: 0.8; }
+      100% { transform: translateY(-800px) rotate(45deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://example.com/they-call-this-love.mp3" type="audio/mpeg">
+  </audio>
+
+  <h1>Hey Akdu Mahii 😏</h1>
+  <p>Tumhe lagta hai sirf tum akdu ho, lekin sach me tum cute bhi ho 😉</p>
+  <button onclick="showLove()">Click karo na 😚</button>
+
+  <div id="final">
+    <h1>💖 You’re special to me, Mahii 💖</h1>
+    <p>
+      Tere akdupan ke peeche ek pyaara sa dil hai,<br>
+      Jisse dekh ke dil kehta hai — yeh meri feel hai 💞<br><br>
+      Shak karti ho par dil se sundar ho,<br>
+      Har muskurahat me kuch khaas baat hai jo sirf tumse judi hai 💫<br><br>
+      – From Pidi 💌
+    </p>
+  </div>
+
+  <script>
+    function showLove() {
+      document.querySelector("h1").style.display = "none";
+      document.querySelector("p").style.display = "none";
+      document.querySelector("button").style.display = "none";
+      document.getElementById("final").style.display = "block";
+      for(let i=0; i<30; i++){
+        let heart = document.createElement("div");
+        heart.className = "hearts";
+        heart.style.left = Math.random()*100 + "vw";
+        heart.style.animationDuration = 3 + Math.random()*3 + "s";
+        heart.style.background = ["#ff99cc","#ffb6c1","#ffcce6"][Math.floor(Math.random()*3)];
+        document.body.appendChild(heart);
+        setTimeout(()=>heart.remove(),6000);
+      }
+    }
+  </script>
+</body>
+</html>
